@@ -12,52 +12,50 @@ const db = mongoConnect.db(dbName);
 /* CRUD: READ
 *************************************** */
 async function readAll() {
-  const readAll = await db.collection(collectionName)
+  const query = await db.collection(collectionName)
     .find( {} )
     .limit(10)
     .toArray();
   
-  return readAll;
+  return query;
 }
 
 /* CRUD: DELETE
 *************************************** */
 async function deleteOne(id) {
-  const deleteOne = await db.collection(collectionName)
+  const query = await db.collection(collectionName)
     .deleteOne( { _id: new ObjectId(id) } );
   
-  return deleteOne;
+  return query;
 }
 
 /* CRUD: INSERT 
 *************************************** */
 async function insertOne(document) {
-  const insertOne = await db.collection(collectionName)
+  const query = await db.collection(collectionName)
     .insertOne(document);
 
-  return insertOne;
+  return query;
 }
 
 /* CRUD: UPDATE
 *************************************** */
 async function updateOne(id, document) {
-  const updateOne = await db.collection(collectionName)
+  const query = await db.collection(collectionName)
     .updateOne( 
       { _id: new ObjectId(id) }, 
       { $set: document } 
     );
   
-  return updateOne;
+  return query;
 }
-
-
 
 /* RENDER
 *************************************** */
 // const result = await readAll();
 // const result = await deleteOne("648b760af400755b5d3cd621");
 
-// const dataDoc =   { 
+// const dataDoc = { 
 //   name: "new document11",
 //   age: 200,
 //   isAlive: false,
@@ -65,7 +63,7 @@ async function updateOne(id, document) {
 
 // const result = await insertOne(dataDoc);
 
-const dataDoc =   {
+const dataDoc = {
   name: "green onion"
 };
 
