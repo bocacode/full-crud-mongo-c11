@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Broccoli",
+    "price": 2.99,
+    "type": "produce",
+    "isBought": false 
+  },
+
+  {
+    "id": 2,
+    "name": "Carrot",
+    "price": 3.99,
+    "type": "produce",
+    "isBought": true 
+  },
+
+  {
+    "id": 3,
+    "name": "Dog Food",
+    "price": 12.89,
+    "type": "pet",
+    "isBought": false 
+  },
+  
+  {
+    "id": 4,
+    "name": "Tooth Paste",
+    "price": 7.99,
+    "type": "hygeine",
+    "isBought": true
+  }
+]
